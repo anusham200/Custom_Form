@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="Custom_Form_Table" resource="default" engine="innodb" comment="Custom Form Module Table">
+        <!-- Primary Key -->
+        <column xsi:type="varchar" name="email" nullable="false" length="255" comment="Email Address"/>
+        
+        <!-- Additional Fields -->
+        <column xsi:type="varchar" name="fname" nullable="true" length="255" comment="First Name"/>
+        <column xsi:type="varchar" name="lname" nullable="true" length="255" comment="Last Name"/>
+        <column xsi:type="varchar" name="schoolname" nullable="true" length="255" comment="School Name"/>
+        
+        <!-- Primary Key Constraint -->
+        <constraint xsi:type="primary" columns="email"/>
+    </table>
+</schema>
