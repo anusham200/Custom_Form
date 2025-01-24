@@ -1,10 +1,10 @@
 <?php
-namespace MyCompany\Form\Controller\Index;
+namespace Custom\Form\Controller\Actions;           //
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
-use MyCompany\Form\Model\FormData; // Custom model
+use Custom\Form\Model\FormData;                    // 
 use Magento\Framework\App\RequestInterface;
 
 class Submit extends Action
