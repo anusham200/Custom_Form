@@ -1,0 +1,30 @@
+{
+    "name": "miniorange_inc/Custom_Form",
+    "description": "Custom Form Extension saves the data from the form and stores it in backend",
+
+    "type": "magento2-module",
+    "version": "4.1.9",
+     "license": [
+        "Commercial"
+    ],
+     "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "MiniOrange\\Custom_Form\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Anusha",
+            "homepage": "https://www.miniorange.com/",
+            "email": "anusha.medam@xecurify.com"
+        }
+    ],
+    "support": {
+        "email": "anusha.medam@xecurify.com"
+    },
+    "require": {
+      "php": "~6|~7|~8"
+    }
+  
+}
