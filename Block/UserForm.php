@@ -8,6 +8,6 @@ class UserForm extends Template
 {
     public function getFormAction()
     {
-        return $this->getUrl('userform/index/submit');
+        return $this->getUrl('userform/actions/submit_form');
     }
 }
