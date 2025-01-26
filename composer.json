@@ -1,5 +1,5 @@
 {
-    "name": "miniorange_inc/Custom_Form",
+    "name": "lbrce/customform",
     "description": "Custom Form Extension saves the data from the form and stores it in backend",
 
     "type": "magento2-module",
