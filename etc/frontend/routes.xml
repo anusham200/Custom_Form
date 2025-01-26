@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="Custom_form">
+    <router id="customform">
         <route frontName="form" id="form">
-            <module name="Custom_Form"/>
+            <module name="customform"/>
         </route>
     </router>
 </config>
