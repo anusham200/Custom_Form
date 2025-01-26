@@ -1,46 +1,30 @@
 <?php
-namespace Custom\Form\Controller\Actions;           //
+
+namespace lbrce\customform\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
-use Magento\Framework\Controller\ResultFactory;
-use Custom\Form\Model\FormData;                    // 
-use Magento\Framework\App\RequestInterface;
+use lbrce\customform\Model\User;
 
-class Submit extends Action
+class Submit_Form extends Action
 {
-    protected $formDataModel;
-    
-    public function __construct(
-        Context $context,
-        FormData $formDataModel
-    ) {
-        $this->formDataModel = $formDataModel;
+    protected $user;
+
+    public function __construct(Context $context, User $user)
+    {
         parent::__construct($context);
+        $this->user = $user;
     }
 
     public function execute()
     {
-        // Get form data from request
-        $email = $this->getRequest()->getParam('email');
-        $firstName = $this->getRequest()->getParam('firstname');
-        $lastName = $this->getRequest()->getParam('lastname');
-        $schoolName = $this->getRequest()->getParam('schoolname');
-
-        // Validate form data (can add more validation as needed)
-        if ($email && $firstName && $lastName && $schoolName) {
-            // Save to database
-            try {
-                $this->formDataModel->saveData($email, $firstName, $lastName, $schoolName);
-                $this->messageManager->addSuccessMessage('Form data saved successfully!');
-            } catch (\Exception $e) {
-                $this->messageManager->addErrorMessage('Error saving form data: ' . $e->getMessage());
-            }
+        $postData = $this->getRequest()->getPostValue();
+        if ($postData) {
+            $this->user->setData($postData)->save();
+            $this->messageManager->addSuccessMessage('Details submitted successfully.');
         } else {
-            $this->messageManager->addErrorMessage('Please fill all required fields.');
+            $this->messageManager->addErrorMessage('Unable to submit details.');
         }
-
-        // Redirect back to the form page (or anywhere else)
-        return $this->resultFactory->create(ResultFactory::TYPE_REDIRECT)->setPath('*/*/');
+        $this->_redirect('userform/index');
     }
 }
