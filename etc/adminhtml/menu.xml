@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Menu/etc/menu.xsd">
     <menu>
-        <add id="lbrce_customform::formfetch"
+        <add id="Lbrce_CustomForm::formfetch"
              title="Form Fetch Plugin"
-             module="lbrce_customform"
+             module="Lbrce_CustomForm"
              sortOrder="52"
             action="formfetch/actions/index"
-             resource="lbrce_customform::formfetch" />
+             resource="Lbrce_CustomForm::formfetch" />
     </menu>
 </config>
