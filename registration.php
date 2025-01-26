@@ -6,8 +6,11 @@
   * core Module. It specifies the root directory
   * of the plugin.
   */
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Custom_Form',
+
+  use Magento\Framework\Component\ComponentRegistrar;
+
+  ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
+    'lbrce_customform',
     __DIR__
 );
